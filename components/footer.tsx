@@ -78,7 +78,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 border-t border-slate-700 py-8 text-center text-base text-gray-500">
-        &copy; Copyright 2025 | JMB | All Right Reserved
+        &copy; Copyright {new Date().getFullYear()} | JMB | All Right Reserved
       </div>
     </footer>
   );
