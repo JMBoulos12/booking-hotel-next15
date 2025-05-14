@@ -5,6 +5,7 @@ import {
   IoCallOutline,
   IoLocationOutline,
 } from "react-icons/io5";
+import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "contact",
@@ -47,8 +48,19 @@ const ContactPage = () => {
                   <p>+971 50 765 4321, +971 52 834 1290</p>
                 </div>
               </li>
+              <li className="flex gap-5">
+                <div className="flex-none bg-gray-300 shadow-sm rounded-sm">
+                  <IoLocationOutline className="size-7" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold mb-1">Address :</h4>
+                  <p>Boulos Enterprises INT Road 2025, ACHRAFIEH, LEBANON</p>
+                </div>
+              </li>
             </ul>
           </div>
+          {/* Contact Form */}
+          <ContactForm />
         </div>
       </div>
     </div>

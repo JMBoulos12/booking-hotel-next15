@@ -193,6 +193,16 @@ exports.Prisma.AccountScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ContactScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -216,7 +226,8 @@ exports.Prisma.ModelName = {
   Reservation: 'Reservation',
   Payment: 'Payment',
   User: 'User',
-  Account: 'Account'
+  Account: 'Account',
+  Contact: 'Contact'
 };
 
 /**
