@@ -1,4 +1,4 @@
-import { put } from "@vercel/blob";
+import { put, del } from "@vercel/blob";
 import { NextResponse } from "next/server";
 
 export const PUT = async (request: Request) => {
@@ -8,22 +8,32 @@ export const PUT = async (request: Request) => {
   if (file.size === 0 || file.size === undefined) {
     return NextResponse.json({ message: "File is Required" }, { status: 400 });
   }
-  if (file.size > 4000000000) {
+  if (file.size > 4000000) {
     return NextResponse.json(
       { message: "File must be less than 4MB" },
       { status: 400 }
     );
   }
-  if (file.type.startsWith("image/")) {
+  if (!file.type.startsWith("image/")) {
     return NextResponse.json(
       { message: "File must be an image" },
       { status: 400 }
     );
   }
 
+  // ✅ Generate a unique name to avoid overwrite errors
+  const uniqueName = `${Date.now()}-${file.name}`;
+
   const blob = await put(file.name, file, {
     access: "public",
     multipart: true,
   });
   return NextResponse.json(blob);
+};
+
+export const DELETE = async (request: Request) => {
+  const { searchParams } = new URL(request.url);
+  const imageUrl = searchParams.get("imageUrl") as string;
+  await del(imageUrl);
+  return NextResponse.json({ status: 200 });
 };
