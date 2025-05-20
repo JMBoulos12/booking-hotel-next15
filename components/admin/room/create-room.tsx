@@ -10,7 +10,7 @@ const CreateRoom = async () => {
       <h1 className="text-3xl font-black text-gray-800 mb-4">
         Create New Room
       </h1>
-      <CreateForm amenities={amenities}/>
+      <CreateForm amenities={amenities} />
     </div>
   );
 };

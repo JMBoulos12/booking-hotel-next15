@@ -1,6 +1,7 @@
-import { RoomAmenities } from './../app/generated/prisma/index.d';
+// FIX: Move "use server" correctly
 "use server";
 
+import { RoomAmenities } from "./../app/generated/prisma/index.d";
 import { prisma } from "@/lib/prisma";
 import { ContactSchema, RoomSchema } from "@/lib/zod";
 import { redirect } from "next/navigation";
@@ -82,7 +83,6 @@ export const ContactMessage = async (
   }
 };
 
-// Delete Room
 export const deleteRoom = async (id: string, image: string) => {
   try {
     await del(image);
@@ -95,7 +95,6 @@ export const deleteRoom = async (id: string, image: string) => {
   revalidatePath("/admin/room");
 };
 
-//Update Room
 export const updateRoom = async (
   image: string,
   roomId: string,
@@ -121,32 +120,30 @@ export const updateRoom = async (
     validatedFields.data;
 
   try {
-    await prisma.$transaction({
+    await prisma.$transaction([
       prisma.room.update({
-        where: {id: roomId},
-        data:{
+        where: { id: roomId },
+        data: {
           name,
           description,
           image,
           price,
           capacity,
-          RoomAmenities:{
-            deleteMany: {
-
-            }
-          }
-        }
+          RoomAmenities: {
+            deleteMany: {},
+          },
+        },
       }),
       prisma.roomAmenities.createMany({
         data: amenities.map((item) => ({
           roomId,
-          amenitiesId: item
-        }))
-      })
-    })
+          amenitiesId: item,
+        })),
+      }),
+    ]);
   } catch (error) {
     console.log(error);
   }
-  revalidatePath("/admin/room")
+  revalidatePath("/admin/room");
   redirect("/admin/room");
 };
