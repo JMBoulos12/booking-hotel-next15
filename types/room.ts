@@ -9,3 +9,17 @@ export type RoomProps = Prisma.RoomGetPayload<{
     };
   };
 }>;
+
+export type RoomDetailProps = Prisma.RoomDetailProps<{
+  include: {
+    RoomAmenities: {
+      include: {
+        Amenities: {
+          select: {
+            name: true;
+          };
+        };
+      };
+    };
+  };
+}>;
