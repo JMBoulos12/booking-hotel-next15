@@ -8,6 +8,11 @@ export const RoomSchema = object({
   amenities: array(string()).nonempty(),
 });
 
+export const ReserveSchema = object({
+  name: string().min(1),
+  phone: string().min(10),
+});
+
 export const ContactSchema = object({
   name: string().min(6, "Name at least 6 characters"),
   email: string()
