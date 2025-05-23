@@ -1,6 +1,7 @@
+"use server";
+
 import { Reservation } from "./../app/generated/prisma/index.d";
 // FIX: Move "use server" correctly
-("use server");
 
 import { RoomAmenities } from "./../app/generated/prisma/index.d";
 import { prisma } from "@/lib/prisma";
@@ -162,7 +163,8 @@ export const createReserve = async (
   const session = await auth();
   if (!session || !session.user || !session.user.id)
     redirect(`/signin?redirect_url-room/${roomId}`);
-  const roomData = {
+
+  const rawData = {
     name: formData.get("name"),
     phone: formData.get("phone"),
   };
