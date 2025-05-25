@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type Room = $Result.DefaultSelection<Prisma.$RoomPayload>
 /**
- * Model Amenities
+ * Model Amenity
  * 
  */
-export type Amenities = $Result.DefaultSelection<Prisma.$AmenitiesPayload>
+export type Amenity = $Result.DefaultSelection<Prisma.$AmenityPayload>
 /**
  * Model RoomAmenities
  * 
@@ -190,14 +190,14 @@ export class PrismaClient<
   get room(): Prisma.RoomDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.amenities`: Exposes CRUD operations for the **Amenities** model.
+   * `prisma.amenity`: Exposes CRUD operations for the **Amenity** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Amenities
-    * const amenities = await prisma.amenities.findMany()
+    * const amenities = await prisma.amenity.findMany()
     * ```
     */
-  get amenities(): Prisma.AmenitiesDelegate<ExtArgs, ClientOptions>;
+  get amenity(): Prisma.AmenityDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.roomAmenities`: Exposes CRUD operations for the **RoomAmenities** model.
@@ -699,7 +699,7 @@ export namespace Prisma {
 
   export const ModelName: {
     Room: 'Room',
-    Amenities: 'Amenities',
+    Amenity: 'Amenity',
     RoomAmenities: 'RoomAmenities',
     Reservation: 'Reservation',
     Payment: 'Payment',
@@ -724,7 +724,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "room" | "amenities" | "roomAmenities" | "reservation" | "payment" | "user" | "account" | "contact"
+      modelProps: "room" | "amenity" | "roomAmenities" | "reservation" | "payment" | "user" | "account" | "contact"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -802,77 +802,77 @@ export namespace Prisma {
           }
         }
       }
-      Amenities: {
-        payload: Prisma.$AmenitiesPayload<ExtArgs>
-        fields: Prisma.AmenitiesFieldRefs
+      Amenity: {
+        payload: Prisma.$AmenityPayload<ExtArgs>
+        fields: Prisma.AmenityFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.AmenitiesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload> | null
+            args: Prisma.AmenityFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.AmenitiesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           findFirst: {
-            args: Prisma.AmenitiesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload> | null
+            args: Prisma.AmenityFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.AmenitiesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           findMany: {
-            args: Prisma.AmenitiesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>[]
+            args: Prisma.AmenityFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>[]
           }
           create: {
-            args: Prisma.AmenitiesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           createMany: {
-            args: Prisma.AmenitiesCreateManyArgs<ExtArgs>
+            args: Prisma.AmenityCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.AmenitiesCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>[]
+            args: Prisma.AmenityCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>[]
           }
           delete: {
-            args: Prisma.AmenitiesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           update: {
-            args: Prisma.AmenitiesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           deleteMany: {
-            args: Prisma.AmenitiesDeleteManyArgs<ExtArgs>
+            args: Prisma.AmenityDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.AmenitiesUpdateManyArgs<ExtArgs>
+            args: Prisma.AmenityUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.AmenitiesUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>[]
+            args: Prisma.AmenityUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>[]
           }
           upsert: {
-            args: Prisma.AmenitiesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$AmenitiesPayload>
+            args: Prisma.AmenityUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$AmenityPayload>
           }
           aggregate: {
-            args: Prisma.AmenitiesAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateAmenities>
+            args: Prisma.AmenityAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAmenity>
           }
           groupBy: {
-            args: Prisma.AmenitiesGroupByArgs<ExtArgs>
-            result: $Utils.Optional<AmenitiesGroupByOutputType>[]
+            args: Prisma.AmenityGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AmenityGroupByOutputType>[]
           }
           count: {
-            args: Prisma.AmenitiesCountArgs<ExtArgs>
-            result: $Utils.Optional<AmenitiesCountAggregateOutputType> | number
+            args: Prisma.AmenityCountArgs<ExtArgs>
+            result: $Utils.Optional<AmenityCountAggregateOutputType> | number
           }
         }
       }
@@ -1405,7 +1405,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     room?: RoomOmit
-    amenities?: AmenitiesOmit
+    amenity?: AmenityOmit
     roomAmenities?: RoomAmenitiesOmit
     reservation?: ReservationOmit
     payment?: PaymentOmit
@@ -1542,32 +1542,32 @@ export namespace Prisma {
 
 
   /**
-   * Count Type AmenitiesCountOutputType
+   * Count Type AmenityCountOutputType
    */
 
-  export type AmenitiesCountOutputType = {
+  export type AmenityCountOutputType = {
     RoomAmenities: number
   }
 
-  export type AmenitiesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    RoomAmenities?: boolean | AmenitiesCountOutputTypeCountRoomAmenitiesArgs
+  export type AmenityCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    RoomAmenities?: boolean | AmenityCountOutputTypeCountRoomAmenitiesArgs
   }
 
   // Custom InputTypes
   /**
-   * AmenitiesCountOutputType without action
+   * AmenityCountOutputType without action
    */
-  export type AmenitiesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the AmenitiesCountOutputType
+     * Select specific fields to fetch from the AmenityCountOutputType
      */
-    select?: AmenitiesCountOutputTypeSelect<ExtArgs> | null
+    select?: AmenityCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * AmenitiesCountOutputType without action
+   * AmenityCountOutputType without action
    */
-  export type AmenitiesCountOutputTypeCountRoomAmenitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityCountOutputTypeCountRoomAmenitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: RoomAmenitiesWhereInput
   }
 
@@ -2792,30 +2792,30 @@ export namespace Prisma {
 
 
   /**
-   * Model Amenities
+   * Model Amenity
    */
 
-  export type AggregateAmenities = {
-    _count: AmenitiesCountAggregateOutputType | null
-    _min: AmenitiesMinAggregateOutputType | null
-    _max: AmenitiesMaxAggregateOutputType | null
+  export type AggregateAmenity = {
+    _count: AmenityCountAggregateOutputType | null
+    _min: AmenityMinAggregateOutputType | null
+    _max: AmenityMaxAggregateOutputType | null
   }
 
-  export type AmenitiesMinAggregateOutputType = {
+  export type AmenityMinAggregateOutputType = {
     id: string | null
     name: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type AmenitiesMaxAggregateOutputType = {
+  export type AmenityMaxAggregateOutputType = {
     id: string | null
     name: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type AmenitiesCountAggregateOutputType = {
+  export type AmenityCountAggregateOutputType = {
     id: number
     name: number
     createdAt: number
@@ -2824,21 +2824,21 @@ export namespace Prisma {
   }
 
 
-  export type AmenitiesMinAggregateInputType = {
+  export type AmenityMinAggregateInputType = {
     id?: true
     name?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type AmenitiesMaxAggregateInputType = {
+  export type AmenityMaxAggregateInputType = {
     id?: true
     name?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type AmenitiesCountAggregateInputType = {
+  export type AmenityCountAggregateInputType = {
     id?: true
     name?: true
     createdAt?: true
@@ -2846,23 +2846,23 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type AmenitiesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Amenities to aggregate.
+     * Filter which Amenity to aggregate.
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Amenities to fetch.
      */
-    orderBy?: AmenitiesOrderByWithRelationInput | AmenitiesOrderByWithRelationInput[]
+    orderBy?: AmenityOrderByWithRelationInput | AmenityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: AmenitiesWhereUniqueInput
+    cursor?: AmenityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2880,108 +2880,108 @@ export namespace Prisma {
      * 
      * Count returned Amenities
     **/
-    _count?: true | AmenitiesCountAggregateInputType
+    _count?: true | AmenityCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: AmenitiesMinAggregateInputType
+    _min?: AmenityMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: AmenitiesMaxAggregateInputType
+    _max?: AmenityMaxAggregateInputType
   }
 
-  export type GetAmenitiesAggregateType<T extends AmenitiesAggregateArgs> = {
-        [P in keyof T & keyof AggregateAmenities]: P extends '_count' | 'count'
+  export type GetAmenityAggregateType<T extends AmenityAggregateArgs> = {
+        [P in keyof T & keyof AggregateAmenity]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateAmenities[P]>
-      : GetScalarType<T[P], AggregateAmenities[P]>
+        : GetScalarType<T[P], AggregateAmenity[P]>
+      : GetScalarType<T[P], AggregateAmenity[P]>
   }
 
 
 
 
-  export type AmenitiesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: AmenitiesWhereInput
-    orderBy?: AmenitiesOrderByWithAggregationInput | AmenitiesOrderByWithAggregationInput[]
-    by: AmenitiesScalarFieldEnum[] | AmenitiesScalarFieldEnum
-    having?: AmenitiesScalarWhereWithAggregatesInput
+  export type AmenityGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: AmenityWhereInput
+    orderBy?: AmenityOrderByWithAggregationInput | AmenityOrderByWithAggregationInput[]
+    by: AmenityScalarFieldEnum[] | AmenityScalarFieldEnum
+    having?: AmenityScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: AmenitiesCountAggregateInputType | true
-    _min?: AmenitiesMinAggregateInputType
-    _max?: AmenitiesMaxAggregateInputType
+    _count?: AmenityCountAggregateInputType | true
+    _min?: AmenityMinAggregateInputType
+    _max?: AmenityMaxAggregateInputType
   }
 
-  export type AmenitiesGroupByOutputType = {
+  export type AmenityGroupByOutputType = {
     id: string
     name: string
     createdAt: Date
     updatedAt: Date
-    _count: AmenitiesCountAggregateOutputType | null
-    _min: AmenitiesMinAggregateOutputType | null
-    _max: AmenitiesMaxAggregateOutputType | null
+    _count: AmenityCountAggregateOutputType | null
+    _min: AmenityMinAggregateOutputType | null
+    _max: AmenityMaxAggregateOutputType | null
   }
 
-  type GetAmenitiesGroupByPayload<T extends AmenitiesGroupByArgs> = Prisma.PrismaPromise<
+  type GetAmenityGroupByPayload<T extends AmenityGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<AmenitiesGroupByOutputType, T['by']> &
+      PickEnumerable<AmenityGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof AmenitiesGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof AmenityGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], AmenitiesGroupByOutputType[P]>
-            : GetScalarType<T[P], AmenitiesGroupByOutputType[P]>
+              : GetScalarType<T[P], AmenityGroupByOutputType[P]>
+            : GetScalarType<T[P], AmenityGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type AmenitiesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AmenitySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    RoomAmenities?: boolean | Amenities$RoomAmenitiesArgs<ExtArgs>
-    _count?: boolean | AmenitiesCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["amenities"]>
+    RoomAmenities?: boolean | Amenity$RoomAmenitiesArgs<ExtArgs>
+    _count?: boolean | AmenityCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["amenity"]>
 
-  export type AmenitiesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AmenitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["amenities"]>
+  }, ExtArgs["result"]["amenity"]>
 
-  export type AmenitiesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type AmenitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["amenities"]>
+  }, ExtArgs["result"]["amenity"]>
 
-  export type AmenitiesSelectScalar = {
+  export type AmenitySelectScalar = {
     id?: boolean
     name?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type AmenitiesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["amenities"]>
-  export type AmenitiesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    RoomAmenities?: boolean | Amenities$RoomAmenitiesArgs<ExtArgs>
-    _count?: boolean | AmenitiesCountOutputTypeDefaultArgs<ExtArgs>
+  export type AmenityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["amenity"]>
+  export type AmenityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    RoomAmenities?: boolean | Amenity$RoomAmenitiesArgs<ExtArgs>
+    _count?: boolean | AmenityCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type AmenitiesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type AmenitiesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type AmenityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type AmenityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $AmenitiesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Amenities"
+  export type $AmenityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Amenity"
     objects: {
       RoomAmenities: Prisma.$RoomAmenitiesPayload<ExtArgs>[]
     }
@@ -2990,136 +2990,136 @@ export namespace Prisma {
       name: string
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["amenities"]>
+    }, ExtArgs["result"]["amenity"]>
     composites: {}
   }
 
-  type AmenitiesGetPayload<S extends boolean | null | undefined | AmenitiesDefaultArgs> = $Result.GetResult<Prisma.$AmenitiesPayload, S>
+  type AmenityGetPayload<S extends boolean | null | undefined | AmenityDefaultArgs> = $Result.GetResult<Prisma.$AmenityPayload, S>
 
-  type AmenitiesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<AmenitiesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: AmenitiesCountAggregateInputType | true
+  type AmenityCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<AmenityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AmenityCountAggregateInputType | true
     }
 
-  export interface AmenitiesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Amenities'], meta: { name: 'Amenities' } }
+  export interface AmenityDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Amenity'], meta: { name: 'Amenity' } }
     /**
-     * Find zero or one Amenities that matches the filter.
-     * @param {AmenitiesFindUniqueArgs} args - Arguments to find a Amenities
+     * Find zero or one Amenity that matches the filter.
+     * @param {AmenityFindUniqueArgs} args - Arguments to find a Amenity
      * @example
-     * // Get one Amenities
-     * const amenities = await prisma.amenities.findUnique({
+     * // Get one Amenity
+     * const amenity = await prisma.amenity.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends AmenitiesFindUniqueArgs>(args: SelectSubset<T, AmenitiesFindUniqueArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends AmenityFindUniqueArgs>(args: SelectSubset<T, AmenityFindUniqueArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Amenities that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Amenity that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {AmenitiesFindUniqueOrThrowArgs} args - Arguments to find a Amenities
+     * @param {AmenityFindUniqueOrThrowArgs} args - Arguments to find a Amenity
      * @example
-     * // Get one Amenities
-     * const amenities = await prisma.amenities.findUniqueOrThrow({
+     * // Get one Amenity
+     * const amenity = await prisma.amenity.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends AmenitiesFindUniqueOrThrowArgs>(args: SelectSubset<T, AmenitiesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends AmenityFindUniqueOrThrowArgs>(args: SelectSubset<T, AmenityFindUniqueOrThrowArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Amenities that matches the filter.
+     * Find the first Amenity that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesFindFirstArgs} args - Arguments to find a Amenities
+     * @param {AmenityFindFirstArgs} args - Arguments to find a Amenity
      * @example
-     * // Get one Amenities
-     * const amenities = await prisma.amenities.findFirst({
+     * // Get one Amenity
+     * const amenity = await prisma.amenity.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends AmenitiesFindFirstArgs>(args?: SelectSubset<T, AmenitiesFindFirstArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends AmenityFindFirstArgs>(args?: SelectSubset<T, AmenityFindFirstArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Amenities that matches the filter or
+     * Find the first Amenity that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesFindFirstOrThrowArgs} args - Arguments to find a Amenities
+     * @param {AmenityFindFirstOrThrowArgs} args - Arguments to find a Amenity
      * @example
-     * // Get one Amenities
-     * const amenities = await prisma.amenities.findFirstOrThrow({
+     * // Get one Amenity
+     * const amenity = await prisma.amenity.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends AmenitiesFindFirstOrThrowArgs>(args?: SelectSubset<T, AmenitiesFindFirstOrThrowArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends AmenityFindFirstOrThrowArgs>(args?: SelectSubset<T, AmenityFindFirstOrThrowArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Amenities that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {AmenityFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Amenities
-     * const amenities = await prisma.amenities.findMany()
+     * const amenities = await prisma.amenity.findMany()
      * 
      * // Get first 10 Amenities
-     * const amenities = await prisma.amenities.findMany({ take: 10 })
+     * const amenities = await prisma.amenity.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const amenitiesWithIdOnly = await prisma.amenities.findMany({ select: { id: true } })
+     * const amenityWithIdOnly = await prisma.amenity.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends AmenitiesFindManyArgs>(args?: SelectSubset<T, AmenitiesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends AmenityFindManyArgs>(args?: SelectSubset<T, AmenityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Amenities.
-     * @param {AmenitiesCreateArgs} args - Arguments to create a Amenities.
+     * Create a Amenity.
+     * @param {AmenityCreateArgs} args - Arguments to create a Amenity.
      * @example
-     * // Create one Amenities
-     * const Amenities = await prisma.amenities.create({
+     * // Create one Amenity
+     * const Amenity = await prisma.amenity.create({
      *   data: {
-     *     // ... data to create a Amenities
+     *     // ... data to create a Amenity
      *   }
      * })
      * 
      */
-    create<T extends AmenitiesCreateArgs>(args: SelectSubset<T, AmenitiesCreateArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends AmenityCreateArgs>(args: SelectSubset<T, AmenityCreateArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Amenities.
-     * @param {AmenitiesCreateManyArgs} args - Arguments to create many Amenities.
+     * @param {AmenityCreateManyArgs} args - Arguments to create many Amenities.
      * @example
      * // Create many Amenities
-     * const amenities = await prisma.amenities.createMany({
+     * const amenity = await prisma.amenity.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends AmenitiesCreateManyArgs>(args?: SelectSubset<T, AmenitiesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends AmenityCreateManyArgs>(args?: SelectSubset<T, AmenityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Amenities and returns the data saved in the database.
-     * @param {AmenitiesCreateManyAndReturnArgs} args - Arguments to create many Amenities.
+     * @param {AmenityCreateManyAndReturnArgs} args - Arguments to create many Amenities.
      * @example
      * // Create many Amenities
-     * const amenities = await prisma.amenities.createManyAndReturn({
+     * const amenity = await prisma.amenity.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Amenities and only return the `id`
-     * const amenitiesWithIdOnly = await prisma.amenities.createManyAndReturn({
+     * const amenityWithIdOnly = await prisma.amenity.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3129,28 +3129,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends AmenitiesCreateManyAndReturnArgs>(args?: SelectSubset<T, AmenitiesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends AmenityCreateManyAndReturnArgs>(args?: SelectSubset<T, AmenityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Amenities.
-     * @param {AmenitiesDeleteArgs} args - Arguments to delete one Amenities.
+     * Delete a Amenity.
+     * @param {AmenityDeleteArgs} args - Arguments to delete one Amenity.
      * @example
-     * // Delete one Amenities
-     * const Amenities = await prisma.amenities.delete({
+     * // Delete one Amenity
+     * const Amenity = await prisma.amenity.delete({
      *   where: {
-     *     // ... filter to delete one Amenities
+     *     // ... filter to delete one Amenity
      *   }
      * })
      * 
      */
-    delete<T extends AmenitiesDeleteArgs>(args: SelectSubset<T, AmenitiesDeleteArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends AmenityDeleteArgs>(args: SelectSubset<T, AmenityDeleteArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Amenities.
-     * @param {AmenitiesUpdateArgs} args - Arguments to update one Amenities.
+     * Update one Amenity.
+     * @param {AmenityUpdateArgs} args - Arguments to update one Amenity.
      * @example
-     * // Update one Amenities
-     * const amenities = await prisma.amenities.update({
+     * // Update one Amenity
+     * const amenity = await prisma.amenity.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3160,30 +3160,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends AmenitiesUpdateArgs>(args: SelectSubset<T, AmenitiesUpdateArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends AmenityUpdateArgs>(args: SelectSubset<T, AmenityUpdateArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Amenities.
-     * @param {AmenitiesDeleteManyArgs} args - Arguments to filter Amenities to delete.
+     * @param {AmenityDeleteManyArgs} args - Arguments to filter Amenities to delete.
      * @example
      * // Delete a few Amenities
-     * const { count } = await prisma.amenities.deleteMany({
+     * const { count } = await prisma.amenity.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends AmenitiesDeleteManyArgs>(args?: SelectSubset<T, AmenitiesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends AmenityDeleteManyArgs>(args?: SelectSubset<T, AmenityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Amenities.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {AmenityUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Amenities
-     * const amenities = await prisma.amenities.updateMany({
+     * const amenity = await prisma.amenity.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3193,14 +3193,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends AmenitiesUpdateManyArgs>(args: SelectSubset<T, AmenitiesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends AmenityUpdateManyArgs>(args: SelectSubset<T, AmenityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Amenities and returns the data updated in the database.
-     * @param {AmenitiesUpdateManyAndReturnArgs} args - Arguments to update many Amenities.
+     * @param {AmenityUpdateManyAndReturnArgs} args - Arguments to update many Amenities.
      * @example
      * // Update many Amenities
-     * const amenities = await prisma.amenities.updateManyAndReturn({
+     * const amenity = await prisma.amenity.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3210,7 +3210,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Amenities and only return the `id`
-     * const amenitiesWithIdOnly = await prisma.amenities.updateManyAndReturn({
+     * const amenityWithIdOnly = await prisma.amenity.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3223,56 +3223,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends AmenitiesUpdateManyAndReturnArgs>(args: SelectSubset<T, AmenitiesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends AmenityUpdateManyAndReturnArgs>(args: SelectSubset<T, AmenityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Amenities.
-     * @param {AmenitiesUpsertArgs} args - Arguments to update or create a Amenities.
+     * Create or update one Amenity.
+     * @param {AmenityUpsertArgs} args - Arguments to update or create a Amenity.
      * @example
-     * // Update or create a Amenities
-     * const amenities = await prisma.amenities.upsert({
+     * // Update or create a Amenity
+     * const amenity = await prisma.amenity.upsert({
      *   create: {
-     *     // ... data to create a Amenities
+     *     // ... data to create a Amenity
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Amenities we want to update
+     *     // ... the filter for the Amenity we want to update
      *   }
      * })
      */
-    upsert<T extends AmenitiesUpsertArgs>(args: SelectSubset<T, AmenitiesUpsertArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends AmenityUpsertArgs>(args: SelectSubset<T, AmenityUpsertArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Amenities.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesCountArgs} args - Arguments to filter Amenities to count.
+     * @param {AmenityCountArgs} args - Arguments to filter Amenities to count.
      * @example
      * // Count the number of Amenities
-     * const count = await prisma.amenities.count({
+     * const count = await prisma.amenity.count({
      *   where: {
      *     // ... the filter for the Amenities we want to count
      *   }
      * })
     **/
-    count<T extends AmenitiesCountArgs>(
-      args?: Subset<T, AmenitiesCountArgs>,
+    count<T extends AmenityCountArgs>(
+      args?: Subset<T, AmenityCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], AmenitiesCountAggregateOutputType>
+          : GetScalarType<T['select'], AmenityCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Amenities.
+     * Allows you to perform aggregations operations on a Amenity.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {AmenityAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3292,13 +3292,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends AmenitiesAggregateArgs>(args: Subset<T, AmenitiesAggregateArgs>): Prisma.PrismaPromise<GetAmenitiesAggregateType<T>>
+    aggregate<T extends AmenityAggregateArgs>(args: Subset<T, AmenityAggregateArgs>): Prisma.PrismaPromise<GetAmenityAggregateType<T>>
 
     /**
-     * Group by Amenities.
+     * Group by Amenity.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AmenitiesGroupByArgs} args - Group by arguments.
+     * @param {AmenityGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3313,14 +3313,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends AmenitiesGroupByArgs,
+      T extends AmenityGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: AmenitiesGroupByArgs['orderBy'] }
-        : { orderBy?: AmenitiesGroupByArgs['orderBy'] },
+        ? { orderBy: AmenityGroupByArgs['orderBy'] }
+        : { orderBy?: AmenityGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3369,22 +3369,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, AmenitiesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAmenitiesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, AmenityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAmenityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Amenities model
+   * Fields of the Amenity model
    */
-  readonly fields: AmenitiesFieldRefs;
+  readonly fields: AmenityFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Amenities.
+   * The delegate class that acts as a "Promise-like" for Amenity.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__AmenitiesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__AmenityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    RoomAmenities<T extends Amenities$RoomAmenitiesArgs<ExtArgs> = {}>(args?: Subset<T, Amenities$RoomAmenitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomAmenitiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    RoomAmenities<T extends Amenity$RoomAmenitiesArgs<ExtArgs> = {}>(args?: Subset<T, Amenity$RoomAmenitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoomAmenitiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3411,93 +3411,93 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Amenities model
+   * Fields of the Amenity model
    */
-  interface AmenitiesFieldRefs {
-    readonly id: FieldRef<"Amenities", 'String'>
-    readonly name: FieldRef<"Amenities", 'String'>
-    readonly createdAt: FieldRef<"Amenities", 'DateTime'>
-    readonly updatedAt: FieldRef<"Amenities", 'DateTime'>
+  interface AmenityFieldRefs {
+    readonly id: FieldRef<"Amenity", 'String'>
+    readonly name: FieldRef<"Amenity", 'String'>
+    readonly createdAt: FieldRef<"Amenity", 'DateTime'>
+    readonly updatedAt: FieldRef<"Amenity", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Amenities findUnique
+   * Amenity findUnique
    */
-  export type AmenitiesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * Filter, which Amenities to fetch.
+     * Filter, which Amenity to fetch.
      */
-    where: AmenitiesWhereUniqueInput
+    where: AmenityWhereUniqueInput
   }
 
   /**
-   * Amenities findUniqueOrThrow
+   * Amenity findUniqueOrThrow
    */
-  export type AmenitiesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * Filter, which Amenities to fetch.
+     * Filter, which Amenity to fetch.
      */
-    where: AmenitiesWhereUniqueInput
+    where: AmenityWhereUniqueInput
   }
 
   /**
-   * Amenities findFirst
+   * Amenity findFirst
    */
-  export type AmenitiesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * Filter, which Amenities to fetch.
+     * Filter, which Amenity to fetch.
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Amenities to fetch.
      */
-    orderBy?: AmenitiesOrderByWithRelationInput | AmenitiesOrderByWithRelationInput[]
+    orderBy?: AmenityOrderByWithRelationInput | AmenityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Amenities.
      */
-    cursor?: AmenitiesWhereUniqueInput
+    cursor?: AmenityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3515,41 +3515,41 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Amenities.
      */
-    distinct?: AmenitiesScalarFieldEnum | AmenitiesScalarFieldEnum[]
+    distinct?: AmenityScalarFieldEnum | AmenityScalarFieldEnum[]
   }
 
   /**
-   * Amenities findFirstOrThrow
+   * Amenity findFirstOrThrow
    */
-  export type AmenitiesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * Filter, which Amenities to fetch.
+     * Filter, which Amenity to fetch.
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Amenities to fetch.
      */
-    orderBy?: AmenitiesOrderByWithRelationInput | AmenitiesOrderByWithRelationInput[]
+    orderBy?: AmenityOrderByWithRelationInput | AmenityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Amenities.
      */
-    cursor?: AmenitiesWhereUniqueInput
+    cursor?: AmenityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3567,41 +3567,41 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Amenities.
      */
-    distinct?: AmenitiesScalarFieldEnum | AmenitiesScalarFieldEnum[]
+    distinct?: AmenityScalarFieldEnum | AmenityScalarFieldEnum[]
   }
 
   /**
-   * Amenities findMany
+   * Amenity findMany
    */
-  export type AmenitiesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
      * Filter, which Amenities to fetch.
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Amenities to fetch.
      */
-    orderBy?: AmenitiesOrderByWithRelationInput | AmenitiesOrderByWithRelationInput[]
+    orderBy?: AmenityOrderByWithRelationInput | AmenityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Amenities.
      */
-    cursor?: AmenitiesWhereUniqueInput
+    cursor?: AmenityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3614,99 +3614,99 @@ export namespace Prisma {
      * Skip the first `n` Amenities.
      */
     skip?: number
-    distinct?: AmenitiesScalarFieldEnum | AmenitiesScalarFieldEnum[]
+    distinct?: AmenityScalarFieldEnum | AmenityScalarFieldEnum[]
   }
 
   /**
-   * Amenities create
+   * Amenity create
    */
-  export type AmenitiesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * The data needed to create a Amenities.
+     * The data needed to create a Amenity.
      */
-    data: XOR<AmenitiesCreateInput, AmenitiesUncheckedCreateInput>
+    data: XOR<AmenityCreateInput, AmenityUncheckedCreateInput>
   }
 
   /**
-   * Amenities createMany
+   * Amenity createMany
    */
-  export type AmenitiesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Amenities.
      */
-    data: AmenitiesCreateManyInput | AmenitiesCreateManyInput[]
+    data: AmenityCreateManyInput | AmenityCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Amenities createManyAndReturn
+   * Amenity createManyAndReturn
    */
-  export type AmenitiesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelectCreateManyAndReturn<ExtArgs> | null
+    select?: AmenitySelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * The data used to create many Amenities.
      */
-    data: AmenitiesCreateManyInput | AmenitiesCreateManyInput[]
+    data: AmenityCreateManyInput | AmenityCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Amenities update
+   * Amenity update
    */
-  export type AmenitiesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * The data needed to update a Amenities.
+     * The data needed to update a Amenity.
      */
-    data: XOR<AmenitiesUpdateInput, AmenitiesUncheckedUpdateInput>
+    data: XOR<AmenityUpdateInput, AmenityUncheckedUpdateInput>
     /**
-     * Choose, which Amenities to update.
+     * Choose, which Amenity to update.
      */
-    where: AmenitiesWhereUniqueInput
+    where: AmenityWhereUniqueInput
   }
 
   /**
-   * Amenities updateMany
+   * Amenity updateMany
    */
-  export type AmenitiesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Amenities.
      */
-    data: XOR<AmenitiesUpdateManyMutationInput, AmenitiesUncheckedUpdateManyInput>
+    data: XOR<AmenityUpdateManyMutationInput, AmenityUncheckedUpdateManyInput>
     /**
      * Filter which Amenities to update
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * Limit how many Amenities to update.
      */
@@ -3714,25 +3714,25 @@ export namespace Prisma {
   }
 
   /**
-   * Amenities updateManyAndReturn
+   * Amenity updateManyAndReturn
    */
-  export type AmenitiesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: AmenitySelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * The data used to update Amenities.
      */
-    data: XOR<AmenitiesUpdateManyMutationInput, AmenitiesUncheckedUpdateManyInput>
+    data: XOR<AmenityUpdateManyMutationInput, AmenityUncheckedUpdateManyInput>
     /**
      * Filter which Amenities to update
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * Limit how many Amenities to update.
      */
@@ -3740,65 +3740,65 @@ export namespace Prisma {
   }
 
   /**
-   * Amenities upsert
+   * Amenity upsert
    */
-  export type AmenitiesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * The filter to search for the Amenities to update in case it exists.
+     * The filter to search for the Amenity to update in case it exists.
      */
-    where: AmenitiesWhereUniqueInput
+    where: AmenityWhereUniqueInput
     /**
-     * In case the Amenities found by the `where` argument doesn't exist, create a new Amenities with this data.
+     * In case the Amenity found by the `where` argument doesn't exist, create a new Amenity with this data.
      */
-    create: XOR<AmenitiesCreateInput, AmenitiesUncheckedCreateInput>
+    create: XOR<AmenityCreateInput, AmenityUncheckedCreateInput>
     /**
-     * In case the Amenities was found with the provided `where` argument, update it with this data.
+     * In case the Amenity was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<AmenitiesUpdateInput, AmenitiesUncheckedUpdateInput>
+    update: XOR<AmenityUpdateInput, AmenityUncheckedUpdateInput>
   }
 
   /**
-   * Amenities delete
+   * Amenity delete
    */
-  export type AmenitiesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
     /**
-     * Filter which Amenities to delete.
+     * Filter which Amenity to delete.
      */
-    where: AmenitiesWhereUniqueInput
+    where: AmenityWhereUniqueInput
   }
 
   /**
-   * Amenities deleteMany
+   * Amenity deleteMany
    */
-  export type AmenitiesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Amenities to delete
      */
-    where?: AmenitiesWhereInput
+    where?: AmenityWhereInput
     /**
      * Limit how many Amenities to delete.
      */
@@ -3806,9 +3806,9 @@ export namespace Prisma {
   }
 
   /**
-   * Amenities.RoomAmenities
+   * Amenity.RoomAmenities
    */
-  export type Amenities$RoomAmenitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Amenity$RoomAmenitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the RoomAmenities
      */
@@ -3830,21 +3830,21 @@ export namespace Prisma {
   }
 
   /**
-   * Amenities without action
+   * Amenity without action
    */
-  export type AmenitiesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type AmenityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Amenities
+     * Select specific fields to fetch from the Amenity
      */
-    select?: AmenitiesSelect<ExtArgs> | null
+    select?: AmenitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Amenities
+     * Omit specific fields from the Amenity
      */
-    omit?: AmenitiesOmit<ExtArgs> | null
+    omit?: AmenityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: AmenitiesInclude<ExtArgs> | null
+    include?: AmenityInclude<ExtArgs> | null
   }
 
 
@@ -3861,19 +3861,19 @@ export namespace Prisma {
   export type RoomAmenitiesMinAggregateOutputType = {
     id: string | null
     roomId: string | null
-    amenitiesId: string | null
+    amenityId: string | null
   }
 
   export type RoomAmenitiesMaxAggregateOutputType = {
     id: string | null
     roomId: string | null
-    amenitiesId: string | null
+    amenityId: string | null
   }
 
   export type RoomAmenitiesCountAggregateOutputType = {
     id: number
     roomId: number
-    amenitiesId: number
+    amenityId: number
     _all: number
   }
 
@@ -3881,19 +3881,19 @@ export namespace Prisma {
   export type RoomAmenitiesMinAggregateInputType = {
     id?: true
     roomId?: true
-    amenitiesId?: true
+    amenityId?: true
   }
 
   export type RoomAmenitiesMaxAggregateInputType = {
     id?: true
     roomId?: true
-    amenitiesId?: true
+    amenityId?: true
   }
 
   export type RoomAmenitiesCountAggregateInputType = {
     id?: true
     roomId?: true
-    amenitiesId?: true
+    amenityId?: true
     _all?: true
   }
 
@@ -3972,7 +3972,7 @@ export namespace Prisma {
   export type RoomAmenitiesGroupByOutputType = {
     id: string
     roomId: string
-    amenitiesId: string
+    amenityId: string
     _count: RoomAmenitiesCountAggregateOutputType | null
     _min: RoomAmenitiesMinAggregateOutputType | null
     _max: RoomAmenitiesMaxAggregateOutputType | null
@@ -3995,57 +3995,57 @@ export namespace Prisma {
   export type RoomAmenitiesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     roomId?: boolean
-    amenitiesId?: boolean
+    amenityId?: boolean
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["roomAmenities"]>
 
   export type RoomAmenitiesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     roomId?: boolean
-    amenitiesId?: boolean
+    amenityId?: boolean
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["roomAmenities"]>
 
   export type RoomAmenitiesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     roomId?: boolean
-    amenitiesId?: boolean
+    amenityId?: boolean
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["roomAmenities"]>
 
   export type RoomAmenitiesSelectScalar = {
     id?: boolean
     roomId?: boolean
-    amenitiesId?: boolean
+    amenityId?: boolean
   }
 
-  export type RoomAmenitiesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "roomId" | "amenitiesId", ExtArgs["result"]["roomAmenities"]>
+  export type RoomAmenitiesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "roomId" | "amenityId", ExtArgs["result"]["roomAmenities"]>
   export type RoomAmenitiesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }
   export type RoomAmenitiesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }
   export type RoomAmenitiesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Room?: boolean | RoomDefaultArgs<ExtArgs>
-    Amenities?: boolean | AmenitiesDefaultArgs<ExtArgs>
+    Amenity?: boolean | AmenityDefaultArgs<ExtArgs>
   }
 
   export type $RoomAmenitiesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "RoomAmenities"
     objects: {
       Room: Prisma.$RoomPayload<ExtArgs>
-      Amenities: Prisma.$AmenitiesPayload<ExtArgs>
+      Amenity: Prisma.$AmenityPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       roomId: string
-      amenitiesId: string
+      amenityId: string
     }, ExtArgs["result"]["roomAmenities"]>
     composites: {}
   }
@@ -4441,7 +4441,7 @@ export namespace Prisma {
   export interface Prisma__RoomAmenitiesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     Room<T extends RoomDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoomDefaultArgs<ExtArgs>>): Prisma__RoomClient<$Result.GetResult<Prisma.$RoomPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    Amenities<T extends AmenitiesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AmenitiesDefaultArgs<ExtArgs>>): Prisma__AmenitiesClient<$Result.GetResult<Prisma.$AmenitiesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    Amenity<T extends AmenityDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AmenityDefaultArgs<ExtArgs>>): Prisma__AmenityClient<$Result.GetResult<Prisma.$AmenityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4473,7 +4473,7 @@ export namespace Prisma {
   interface RoomAmenitiesFieldRefs {
     readonly id: FieldRef<"RoomAmenities", 'String'>
     readonly roomId: FieldRef<"RoomAmenities", 'String'>
-    readonly amenitiesId: FieldRef<"RoomAmenities", 'String'>
+    readonly amenityId: FieldRef<"RoomAmenities", 'String'>
   }
     
 
@@ -10563,20 +10563,20 @@ export namespace Prisma {
   export type RoomScalarFieldEnum = (typeof RoomScalarFieldEnum)[keyof typeof RoomScalarFieldEnum]
 
 
-  export const AmenitiesScalarFieldEnum: {
+  export const AmenityScalarFieldEnum: {
     id: 'id',
     name: 'name',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
-  export type AmenitiesScalarFieldEnum = (typeof AmenitiesScalarFieldEnum)[keyof typeof AmenitiesScalarFieldEnum]
+  export type AmenityScalarFieldEnum = (typeof AmenityScalarFieldEnum)[keyof typeof AmenityScalarFieldEnum]
 
 
   export const RoomAmenitiesScalarFieldEnum: {
     id: 'id',
     roomId: 'roomId',
-    amenitiesId: 'amenitiesId'
+    amenityId: 'amenityId'
   };
 
   export type RoomAmenitiesScalarFieldEnum = (typeof RoomAmenitiesScalarFieldEnum)[keyof typeof RoomAmenitiesScalarFieldEnum]
@@ -10819,18 +10819,18 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Room"> | Date | string
   }
 
-  export type AmenitiesWhereInput = {
-    AND?: AmenitiesWhereInput | AmenitiesWhereInput[]
-    OR?: AmenitiesWhereInput[]
-    NOT?: AmenitiesWhereInput | AmenitiesWhereInput[]
-    id?: StringFilter<"Amenities"> | string
-    name?: StringFilter<"Amenities"> | string
-    createdAt?: DateTimeFilter<"Amenities"> | Date | string
-    updatedAt?: DateTimeFilter<"Amenities"> | Date | string
+  export type AmenityWhereInput = {
+    AND?: AmenityWhereInput | AmenityWhereInput[]
+    OR?: AmenityWhereInput[]
+    NOT?: AmenityWhereInput | AmenityWhereInput[]
+    id?: StringFilter<"Amenity"> | string
+    name?: StringFilter<"Amenity"> | string
+    createdAt?: DateTimeFilter<"Amenity"> | Date | string
+    updatedAt?: DateTimeFilter<"Amenity"> | Date | string
     RoomAmenities?: RoomAmenitiesListRelationFilter
   }
 
-  export type AmenitiesOrderByWithRelationInput = {
+  export type AmenityOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
@@ -10838,35 +10838,35 @@ export namespace Prisma {
     RoomAmenities?: RoomAmenitiesOrderByRelationAggregateInput
   }
 
-  export type AmenitiesWhereUniqueInput = Prisma.AtLeast<{
+  export type AmenityWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: AmenitiesWhereInput | AmenitiesWhereInput[]
-    OR?: AmenitiesWhereInput[]
-    NOT?: AmenitiesWhereInput | AmenitiesWhereInput[]
-    name?: StringFilter<"Amenities"> | string
-    createdAt?: DateTimeFilter<"Amenities"> | Date | string
-    updatedAt?: DateTimeFilter<"Amenities"> | Date | string
+    AND?: AmenityWhereInput | AmenityWhereInput[]
+    OR?: AmenityWhereInput[]
+    NOT?: AmenityWhereInput | AmenityWhereInput[]
+    name?: StringFilter<"Amenity"> | string
+    createdAt?: DateTimeFilter<"Amenity"> | Date | string
+    updatedAt?: DateTimeFilter<"Amenity"> | Date | string
     RoomAmenities?: RoomAmenitiesListRelationFilter
   }, "id">
 
-  export type AmenitiesOrderByWithAggregationInput = {
+  export type AmenityOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: AmenitiesCountOrderByAggregateInput
-    _max?: AmenitiesMaxOrderByAggregateInput
-    _min?: AmenitiesMinOrderByAggregateInput
+    _count?: AmenityCountOrderByAggregateInput
+    _max?: AmenityMaxOrderByAggregateInput
+    _min?: AmenityMinOrderByAggregateInput
   }
 
-  export type AmenitiesScalarWhereWithAggregatesInput = {
-    AND?: AmenitiesScalarWhereWithAggregatesInput | AmenitiesScalarWhereWithAggregatesInput[]
-    OR?: AmenitiesScalarWhereWithAggregatesInput[]
-    NOT?: AmenitiesScalarWhereWithAggregatesInput | AmenitiesScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Amenities"> | string
-    name?: StringWithAggregatesFilter<"Amenities"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Amenities"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Amenities"> | Date | string
+  export type AmenityScalarWhereWithAggregatesInput = {
+    AND?: AmenityScalarWhereWithAggregatesInput | AmenityScalarWhereWithAggregatesInput[]
+    OR?: AmenityScalarWhereWithAggregatesInput[]
+    NOT?: AmenityScalarWhereWithAggregatesInput | AmenityScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Amenity"> | string
+    name?: StringWithAggregatesFilter<"Amenity"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Amenity"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Amenity"> | Date | string
   }
 
   export type RoomAmenitiesWhereInput = {
@@ -10875,17 +10875,17 @@ export namespace Prisma {
     NOT?: RoomAmenitiesWhereInput | RoomAmenitiesWhereInput[]
     id?: StringFilter<"RoomAmenities"> | string
     roomId?: StringFilter<"RoomAmenities"> | string
-    amenitiesId?: StringFilter<"RoomAmenities"> | string
+    amenityId?: StringFilter<"RoomAmenities"> | string
     Room?: XOR<RoomScalarRelationFilter, RoomWhereInput>
-    Amenities?: XOR<AmenitiesScalarRelationFilter, AmenitiesWhereInput>
+    Amenity?: XOR<AmenityScalarRelationFilter, AmenityWhereInput>
   }
 
   export type RoomAmenitiesOrderByWithRelationInput = {
     id?: SortOrder
     roomId?: SortOrder
-    amenitiesId?: SortOrder
+    amenityId?: SortOrder
     Room?: RoomOrderByWithRelationInput
-    Amenities?: AmenitiesOrderByWithRelationInput
+    Amenity?: AmenityOrderByWithRelationInput
   }
 
   export type RoomAmenitiesWhereUniqueInput = Prisma.AtLeast<{
@@ -10894,15 +10894,15 @@ export namespace Prisma {
     OR?: RoomAmenitiesWhereInput[]
     NOT?: RoomAmenitiesWhereInput | RoomAmenitiesWhereInput[]
     roomId?: StringFilter<"RoomAmenities"> | string
-    amenitiesId?: StringFilter<"RoomAmenities"> | string
+    amenityId?: StringFilter<"RoomAmenities"> | string
     Room?: XOR<RoomScalarRelationFilter, RoomWhereInput>
-    Amenities?: XOR<AmenitiesScalarRelationFilter, AmenitiesWhereInput>
+    Amenity?: XOR<AmenityScalarRelationFilter, AmenityWhereInput>
   }, "id">
 
   export type RoomAmenitiesOrderByWithAggregationInput = {
     id?: SortOrder
     roomId?: SortOrder
-    amenitiesId?: SortOrder
+    amenityId?: SortOrder
     _count?: RoomAmenitiesCountOrderByAggregateInput
     _max?: RoomAmenitiesMaxOrderByAggregateInput
     _min?: RoomAmenitiesMinOrderByAggregateInput
@@ -10914,7 +10914,7 @@ export namespace Prisma {
     NOT?: RoomAmenitiesScalarWhereWithAggregatesInput | RoomAmenitiesScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"RoomAmenities"> | string
     roomId?: StringWithAggregatesFilter<"RoomAmenities"> | string
-    amenitiesId?: StringWithAggregatesFilter<"RoomAmenities"> | string
+    amenityId?: StringWithAggregatesFilter<"RoomAmenities"> | string
   }
 
   export type ReservationWhereInput = {
@@ -11385,53 +11385,53 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AmenitiesCreateInput = {
+  export type AmenityCreateInput = {
     id?: string
     name: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    RoomAmenities?: RoomAmenitiesCreateNestedManyWithoutAmenitiesInput
+    RoomAmenities?: RoomAmenitiesCreateNestedManyWithoutAmenityInput
   }
 
-  export type AmenitiesUncheckedCreateInput = {
+  export type AmenityUncheckedCreateInput = {
     id?: string
     name: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    RoomAmenities?: RoomAmenitiesUncheckedCreateNestedManyWithoutAmenitiesInput
+    RoomAmenities?: RoomAmenitiesUncheckedCreateNestedManyWithoutAmenityInput
   }
 
-  export type AmenitiesUpdateInput = {
+  export type AmenityUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    RoomAmenities?: RoomAmenitiesUpdateManyWithoutAmenitiesNestedInput
+    RoomAmenities?: RoomAmenitiesUpdateManyWithoutAmenityNestedInput
   }
 
-  export type AmenitiesUncheckedUpdateInput = {
+  export type AmenityUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    RoomAmenities?: RoomAmenitiesUncheckedUpdateManyWithoutAmenitiesNestedInput
+    RoomAmenities?: RoomAmenitiesUncheckedUpdateManyWithoutAmenityNestedInput
   }
 
-  export type AmenitiesCreateManyInput = {
+  export type AmenityCreateManyInput = {
     id?: string
     name: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type AmenitiesUpdateManyMutationInput = {
+  export type AmenityUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AmenitiesUncheckedUpdateManyInput = {
+  export type AmenityUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11441,31 +11441,31 @@ export namespace Prisma {
   export type RoomAmenitiesCreateInput = {
     id?: string
     Room: RoomCreateNestedOneWithoutRoomAmenitiesInput
-    Amenities: AmenitiesCreateNestedOneWithoutRoomAmenitiesInput
+    Amenity: AmenityCreateNestedOneWithoutRoomAmenitiesInput
   }
 
   export type RoomAmenitiesUncheckedCreateInput = {
     id?: string
     roomId: string
-    amenitiesId: string
+    amenityId: string
   }
 
   export type RoomAmenitiesUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     Room?: RoomUpdateOneRequiredWithoutRoomAmenitiesNestedInput
-    Amenities?: AmenitiesUpdateOneRequiredWithoutRoomAmenitiesNestedInput
+    Amenity?: AmenityUpdateOneRequiredWithoutRoomAmenitiesNestedInput
   }
 
   export type RoomAmenitiesUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     roomId?: StringFieldUpdateOperationsInput | string
-    amenitiesId?: StringFieldUpdateOperationsInput | string
+    amenityId?: StringFieldUpdateOperationsInput | string
   }
 
   export type RoomAmenitiesCreateManyInput = {
     id?: string
     roomId: string
-    amenitiesId: string
+    amenityId: string
   }
 
   export type RoomAmenitiesUpdateManyMutationInput = {
@@ -11475,7 +11475,7 @@ export namespace Prisma {
   export type RoomAmenitiesUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     roomId?: StringFieldUpdateOperationsInput | string
-    amenitiesId?: StringFieldUpdateOperationsInput | string
+    amenityId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ReservationCreateInput = {
@@ -12047,21 +12047,21 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type AmenitiesCountOrderByAggregateInput = {
+  export type AmenityCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type AmenitiesMaxOrderByAggregateInput = {
+  export type AmenityMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type AmenitiesMinOrderByAggregateInput = {
+  export type AmenityMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     createdAt?: SortOrder
@@ -12073,27 +12073,27 @@ export namespace Prisma {
     isNot?: RoomWhereInput
   }
 
-  export type AmenitiesScalarRelationFilter = {
-    is?: AmenitiesWhereInput
-    isNot?: AmenitiesWhereInput
+  export type AmenityScalarRelationFilter = {
+    is?: AmenityWhereInput
+    isNot?: AmenityWhereInput
   }
 
   export type RoomAmenitiesCountOrderByAggregateInput = {
     id?: SortOrder
     roomId?: SortOrder
-    amenitiesId?: SortOrder
+    amenityId?: SortOrder
   }
 
   export type RoomAmenitiesMaxOrderByAggregateInput = {
     id?: SortOrder
     roomId?: SortOrder
-    amenitiesId?: SortOrder
+    amenityId?: SortOrder
   }
 
   export type RoomAmenitiesMinOrderByAggregateInput = {
     id?: SortOrder
     roomId?: SortOrder
-    amenitiesId?: SortOrder
+    amenityId?: SortOrder
   }
 
   export type UserScalarRelationFilter = {
@@ -12517,45 +12517,45 @@ export namespace Prisma {
     deleteMany?: ReservationScalarWhereInput | ReservationScalarWhereInput[]
   }
 
-  export type RoomAmenitiesCreateNestedManyWithoutAmenitiesInput = {
-    create?: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput> | RoomAmenitiesCreateWithoutAmenitiesInput[] | RoomAmenitiesUncheckedCreateWithoutAmenitiesInput[]
-    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenitiesInput | RoomAmenitiesCreateOrConnectWithoutAmenitiesInput[]
-    createMany?: RoomAmenitiesCreateManyAmenitiesInputEnvelope
+  export type RoomAmenitiesCreateNestedManyWithoutAmenityInput = {
+    create?: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput> | RoomAmenitiesCreateWithoutAmenityInput[] | RoomAmenitiesUncheckedCreateWithoutAmenityInput[]
+    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenityInput | RoomAmenitiesCreateOrConnectWithoutAmenityInput[]
+    createMany?: RoomAmenitiesCreateManyAmenityInputEnvelope
     connect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
   }
 
-  export type RoomAmenitiesUncheckedCreateNestedManyWithoutAmenitiesInput = {
-    create?: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput> | RoomAmenitiesCreateWithoutAmenitiesInput[] | RoomAmenitiesUncheckedCreateWithoutAmenitiesInput[]
-    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenitiesInput | RoomAmenitiesCreateOrConnectWithoutAmenitiesInput[]
-    createMany?: RoomAmenitiesCreateManyAmenitiesInputEnvelope
+  export type RoomAmenitiesUncheckedCreateNestedManyWithoutAmenityInput = {
+    create?: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput> | RoomAmenitiesCreateWithoutAmenityInput[] | RoomAmenitiesUncheckedCreateWithoutAmenityInput[]
+    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenityInput | RoomAmenitiesCreateOrConnectWithoutAmenityInput[]
+    createMany?: RoomAmenitiesCreateManyAmenityInputEnvelope
     connect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
   }
 
-  export type RoomAmenitiesUpdateManyWithoutAmenitiesNestedInput = {
-    create?: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput> | RoomAmenitiesCreateWithoutAmenitiesInput[] | RoomAmenitiesUncheckedCreateWithoutAmenitiesInput[]
-    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenitiesInput | RoomAmenitiesCreateOrConnectWithoutAmenitiesInput[]
-    upsert?: RoomAmenitiesUpsertWithWhereUniqueWithoutAmenitiesInput | RoomAmenitiesUpsertWithWhereUniqueWithoutAmenitiesInput[]
-    createMany?: RoomAmenitiesCreateManyAmenitiesInputEnvelope
+  export type RoomAmenitiesUpdateManyWithoutAmenityNestedInput = {
+    create?: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput> | RoomAmenitiesCreateWithoutAmenityInput[] | RoomAmenitiesUncheckedCreateWithoutAmenityInput[]
+    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenityInput | RoomAmenitiesCreateOrConnectWithoutAmenityInput[]
+    upsert?: RoomAmenitiesUpsertWithWhereUniqueWithoutAmenityInput | RoomAmenitiesUpsertWithWhereUniqueWithoutAmenityInput[]
+    createMany?: RoomAmenitiesCreateManyAmenityInputEnvelope
     set?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     disconnect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     delete?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     connect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
-    update?: RoomAmenitiesUpdateWithWhereUniqueWithoutAmenitiesInput | RoomAmenitiesUpdateWithWhereUniqueWithoutAmenitiesInput[]
-    updateMany?: RoomAmenitiesUpdateManyWithWhereWithoutAmenitiesInput | RoomAmenitiesUpdateManyWithWhereWithoutAmenitiesInput[]
+    update?: RoomAmenitiesUpdateWithWhereUniqueWithoutAmenityInput | RoomAmenitiesUpdateWithWhereUniqueWithoutAmenityInput[]
+    updateMany?: RoomAmenitiesUpdateManyWithWhereWithoutAmenityInput | RoomAmenitiesUpdateManyWithWhereWithoutAmenityInput[]
     deleteMany?: RoomAmenitiesScalarWhereInput | RoomAmenitiesScalarWhereInput[]
   }
 
-  export type RoomAmenitiesUncheckedUpdateManyWithoutAmenitiesNestedInput = {
-    create?: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput> | RoomAmenitiesCreateWithoutAmenitiesInput[] | RoomAmenitiesUncheckedCreateWithoutAmenitiesInput[]
-    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenitiesInput | RoomAmenitiesCreateOrConnectWithoutAmenitiesInput[]
-    upsert?: RoomAmenitiesUpsertWithWhereUniqueWithoutAmenitiesInput | RoomAmenitiesUpsertWithWhereUniqueWithoutAmenitiesInput[]
-    createMany?: RoomAmenitiesCreateManyAmenitiesInputEnvelope
+  export type RoomAmenitiesUncheckedUpdateManyWithoutAmenityNestedInput = {
+    create?: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput> | RoomAmenitiesCreateWithoutAmenityInput[] | RoomAmenitiesUncheckedCreateWithoutAmenityInput[]
+    connectOrCreate?: RoomAmenitiesCreateOrConnectWithoutAmenityInput | RoomAmenitiesCreateOrConnectWithoutAmenityInput[]
+    upsert?: RoomAmenitiesUpsertWithWhereUniqueWithoutAmenityInput | RoomAmenitiesUpsertWithWhereUniqueWithoutAmenityInput[]
+    createMany?: RoomAmenitiesCreateManyAmenityInputEnvelope
     set?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     disconnect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     delete?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
     connect?: RoomAmenitiesWhereUniqueInput | RoomAmenitiesWhereUniqueInput[]
-    update?: RoomAmenitiesUpdateWithWhereUniqueWithoutAmenitiesInput | RoomAmenitiesUpdateWithWhereUniqueWithoutAmenitiesInput[]
-    updateMany?: RoomAmenitiesUpdateManyWithWhereWithoutAmenitiesInput | RoomAmenitiesUpdateManyWithWhereWithoutAmenitiesInput[]
+    update?: RoomAmenitiesUpdateWithWhereUniqueWithoutAmenityInput | RoomAmenitiesUpdateWithWhereUniqueWithoutAmenityInput[]
+    updateMany?: RoomAmenitiesUpdateManyWithWhereWithoutAmenityInput | RoomAmenitiesUpdateManyWithWhereWithoutAmenityInput[]
     deleteMany?: RoomAmenitiesScalarWhereInput | RoomAmenitiesScalarWhereInput[]
   }
 
@@ -12565,10 +12565,10 @@ export namespace Prisma {
     connect?: RoomWhereUniqueInput
   }
 
-  export type AmenitiesCreateNestedOneWithoutRoomAmenitiesInput = {
-    create?: XOR<AmenitiesCreateWithoutRoomAmenitiesInput, AmenitiesUncheckedCreateWithoutRoomAmenitiesInput>
-    connectOrCreate?: AmenitiesCreateOrConnectWithoutRoomAmenitiesInput
-    connect?: AmenitiesWhereUniqueInput
+  export type AmenityCreateNestedOneWithoutRoomAmenitiesInput = {
+    create?: XOR<AmenityCreateWithoutRoomAmenitiesInput, AmenityUncheckedCreateWithoutRoomAmenitiesInput>
+    connectOrCreate?: AmenityCreateOrConnectWithoutRoomAmenitiesInput
+    connect?: AmenityWhereUniqueInput
   }
 
   export type RoomUpdateOneRequiredWithoutRoomAmenitiesNestedInput = {
@@ -12579,12 +12579,12 @@ export namespace Prisma {
     update?: XOR<XOR<RoomUpdateToOneWithWhereWithoutRoomAmenitiesInput, RoomUpdateWithoutRoomAmenitiesInput>, RoomUncheckedUpdateWithoutRoomAmenitiesInput>
   }
 
-  export type AmenitiesUpdateOneRequiredWithoutRoomAmenitiesNestedInput = {
-    create?: XOR<AmenitiesCreateWithoutRoomAmenitiesInput, AmenitiesUncheckedCreateWithoutRoomAmenitiesInput>
-    connectOrCreate?: AmenitiesCreateOrConnectWithoutRoomAmenitiesInput
-    upsert?: AmenitiesUpsertWithoutRoomAmenitiesInput
-    connect?: AmenitiesWhereUniqueInput
-    update?: XOR<XOR<AmenitiesUpdateToOneWithWhereWithoutRoomAmenitiesInput, AmenitiesUpdateWithoutRoomAmenitiesInput>, AmenitiesUncheckedUpdateWithoutRoomAmenitiesInput>
+  export type AmenityUpdateOneRequiredWithoutRoomAmenitiesNestedInput = {
+    create?: XOR<AmenityCreateWithoutRoomAmenitiesInput, AmenityUncheckedCreateWithoutRoomAmenitiesInput>
+    connectOrCreate?: AmenityCreateOrConnectWithoutRoomAmenitiesInput
+    upsert?: AmenityUpsertWithoutRoomAmenitiesInput
+    connect?: AmenityWhereUniqueInput
+    update?: XOR<XOR<AmenityUpdateToOneWithWhereWithoutRoomAmenitiesInput, AmenityUpdateWithoutRoomAmenitiesInput>, AmenityUncheckedUpdateWithoutRoomAmenitiesInput>
   }
 
   export type UserCreateNestedOneWithoutReservationInput = {
@@ -12965,12 +12965,12 @@ export namespace Prisma {
 
   export type RoomAmenitiesCreateWithoutRoomInput = {
     id?: string
-    Amenities: AmenitiesCreateNestedOneWithoutRoomAmenitiesInput
+    Amenity: AmenityCreateNestedOneWithoutRoomAmenitiesInput
   }
 
   export type RoomAmenitiesUncheckedCreateWithoutRoomInput = {
     id?: string
-    amenitiesId: string
+    amenityId: string
   }
 
   export type RoomAmenitiesCreateOrConnectWithoutRoomInput = {
@@ -13037,7 +13037,7 @@ export namespace Prisma {
     NOT?: RoomAmenitiesScalarWhereInput | RoomAmenitiesScalarWhereInput[]
     id?: StringFilter<"RoomAmenities"> | string
     roomId?: StringFilter<"RoomAmenities"> | string
-    amenitiesId?: StringFilter<"RoomAmenities"> | string
+    amenityId?: StringFilter<"RoomAmenities"> | string
   }
 
   export type ReservationUpsertWithWhereUniqueWithoutRoomInput = {
@@ -13070,40 +13070,40 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Reservation"> | Date | string
   }
 
-  export type RoomAmenitiesCreateWithoutAmenitiesInput = {
+  export type RoomAmenitiesCreateWithoutAmenityInput = {
     id?: string
     Room: RoomCreateNestedOneWithoutRoomAmenitiesInput
   }
 
-  export type RoomAmenitiesUncheckedCreateWithoutAmenitiesInput = {
+  export type RoomAmenitiesUncheckedCreateWithoutAmenityInput = {
     id?: string
     roomId: string
   }
 
-  export type RoomAmenitiesCreateOrConnectWithoutAmenitiesInput = {
+  export type RoomAmenitiesCreateOrConnectWithoutAmenityInput = {
     where: RoomAmenitiesWhereUniqueInput
-    create: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput>
+    create: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput>
   }
 
-  export type RoomAmenitiesCreateManyAmenitiesInputEnvelope = {
-    data: RoomAmenitiesCreateManyAmenitiesInput | RoomAmenitiesCreateManyAmenitiesInput[]
+  export type RoomAmenitiesCreateManyAmenityInputEnvelope = {
+    data: RoomAmenitiesCreateManyAmenityInput | RoomAmenitiesCreateManyAmenityInput[]
     skipDuplicates?: boolean
   }
 
-  export type RoomAmenitiesUpsertWithWhereUniqueWithoutAmenitiesInput = {
+  export type RoomAmenitiesUpsertWithWhereUniqueWithoutAmenityInput = {
     where: RoomAmenitiesWhereUniqueInput
-    update: XOR<RoomAmenitiesUpdateWithoutAmenitiesInput, RoomAmenitiesUncheckedUpdateWithoutAmenitiesInput>
-    create: XOR<RoomAmenitiesCreateWithoutAmenitiesInput, RoomAmenitiesUncheckedCreateWithoutAmenitiesInput>
+    update: XOR<RoomAmenitiesUpdateWithoutAmenityInput, RoomAmenitiesUncheckedUpdateWithoutAmenityInput>
+    create: XOR<RoomAmenitiesCreateWithoutAmenityInput, RoomAmenitiesUncheckedCreateWithoutAmenityInput>
   }
 
-  export type RoomAmenitiesUpdateWithWhereUniqueWithoutAmenitiesInput = {
+  export type RoomAmenitiesUpdateWithWhereUniqueWithoutAmenityInput = {
     where: RoomAmenitiesWhereUniqueInput
-    data: XOR<RoomAmenitiesUpdateWithoutAmenitiesInput, RoomAmenitiesUncheckedUpdateWithoutAmenitiesInput>
+    data: XOR<RoomAmenitiesUpdateWithoutAmenityInput, RoomAmenitiesUncheckedUpdateWithoutAmenityInput>
   }
 
-  export type RoomAmenitiesUpdateManyWithWhereWithoutAmenitiesInput = {
+  export type RoomAmenitiesUpdateManyWithWhereWithoutAmenityInput = {
     where: RoomAmenitiesScalarWhereInput
-    data: XOR<RoomAmenitiesUpdateManyMutationInput, RoomAmenitiesUncheckedUpdateManyWithoutAmenitiesInput>
+    data: XOR<RoomAmenitiesUpdateManyMutationInput, RoomAmenitiesUncheckedUpdateManyWithoutAmenityInput>
   }
 
   export type RoomCreateWithoutRoomAmenitiesInput = {
@@ -13135,23 +13135,23 @@ export namespace Prisma {
     create: XOR<RoomCreateWithoutRoomAmenitiesInput, RoomUncheckedCreateWithoutRoomAmenitiesInput>
   }
 
-  export type AmenitiesCreateWithoutRoomAmenitiesInput = {
+  export type AmenityCreateWithoutRoomAmenitiesInput = {
     id?: string
     name: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type AmenitiesUncheckedCreateWithoutRoomAmenitiesInput = {
+  export type AmenityUncheckedCreateWithoutRoomAmenitiesInput = {
     id?: string
     name: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type AmenitiesCreateOrConnectWithoutRoomAmenitiesInput = {
-    where: AmenitiesWhereUniqueInput
-    create: XOR<AmenitiesCreateWithoutRoomAmenitiesInput, AmenitiesUncheckedCreateWithoutRoomAmenitiesInput>
+  export type AmenityCreateOrConnectWithoutRoomAmenitiesInput = {
+    where: AmenityWhereUniqueInput
+    create: XOR<AmenityCreateWithoutRoomAmenitiesInput, AmenityUncheckedCreateWithoutRoomAmenitiesInput>
   }
 
   export type RoomUpsertWithoutRoomAmenitiesInput = {
@@ -13189,25 +13189,25 @@ export namespace Prisma {
     Reservation?: ReservationUncheckedUpdateManyWithoutRoomNestedInput
   }
 
-  export type AmenitiesUpsertWithoutRoomAmenitiesInput = {
-    update: XOR<AmenitiesUpdateWithoutRoomAmenitiesInput, AmenitiesUncheckedUpdateWithoutRoomAmenitiesInput>
-    create: XOR<AmenitiesCreateWithoutRoomAmenitiesInput, AmenitiesUncheckedCreateWithoutRoomAmenitiesInput>
-    where?: AmenitiesWhereInput
+  export type AmenityUpsertWithoutRoomAmenitiesInput = {
+    update: XOR<AmenityUpdateWithoutRoomAmenitiesInput, AmenityUncheckedUpdateWithoutRoomAmenitiesInput>
+    create: XOR<AmenityCreateWithoutRoomAmenitiesInput, AmenityUncheckedCreateWithoutRoomAmenitiesInput>
+    where?: AmenityWhereInput
   }
 
-  export type AmenitiesUpdateToOneWithWhereWithoutRoomAmenitiesInput = {
-    where?: AmenitiesWhereInput
-    data: XOR<AmenitiesUpdateWithoutRoomAmenitiesInput, AmenitiesUncheckedUpdateWithoutRoomAmenitiesInput>
+  export type AmenityUpdateToOneWithWhereWithoutRoomAmenitiesInput = {
+    where?: AmenityWhereInput
+    data: XOR<AmenityUpdateWithoutRoomAmenitiesInput, AmenityUncheckedUpdateWithoutRoomAmenitiesInput>
   }
 
-  export type AmenitiesUpdateWithoutRoomAmenitiesInput = {
+  export type AmenityUpdateWithoutRoomAmenitiesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type AmenitiesUncheckedUpdateWithoutRoomAmenitiesInput = {
+  export type AmenityUncheckedUpdateWithoutRoomAmenitiesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13651,7 +13651,7 @@ export namespace Prisma {
 
   export type RoomAmenitiesCreateManyRoomInput = {
     id?: string
-    amenitiesId: string
+    amenityId: string
   }
 
   export type ReservationCreateManyRoomInput = {
@@ -13666,17 +13666,17 @@ export namespace Prisma {
 
   export type RoomAmenitiesUpdateWithoutRoomInput = {
     id?: StringFieldUpdateOperationsInput | string
-    Amenities?: AmenitiesUpdateOneRequiredWithoutRoomAmenitiesNestedInput
+    Amenity?: AmenityUpdateOneRequiredWithoutRoomAmenitiesNestedInput
   }
 
   export type RoomAmenitiesUncheckedUpdateWithoutRoomInput = {
     id?: StringFieldUpdateOperationsInput | string
-    amenitiesId?: StringFieldUpdateOperationsInput | string
+    amenityId?: StringFieldUpdateOperationsInput | string
   }
 
   export type RoomAmenitiesUncheckedUpdateManyWithoutRoomInput = {
     id?: StringFieldUpdateOperationsInput | string
-    amenitiesId?: StringFieldUpdateOperationsInput | string
+    amenityId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ReservationUpdateWithoutRoomInput = {
@@ -13711,22 +13711,22 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type RoomAmenitiesCreateManyAmenitiesInput = {
+  export type RoomAmenitiesCreateManyAmenityInput = {
     id?: string
     roomId: string
   }
 
-  export type RoomAmenitiesUpdateWithoutAmenitiesInput = {
+  export type RoomAmenitiesUpdateWithoutAmenityInput = {
     id?: StringFieldUpdateOperationsInput | string
     Room?: RoomUpdateOneRequiredWithoutRoomAmenitiesNestedInput
   }
 
-  export type RoomAmenitiesUncheckedUpdateWithoutAmenitiesInput = {
+  export type RoomAmenitiesUncheckedUpdateWithoutAmenityInput = {
     id?: StringFieldUpdateOperationsInput | string
     roomId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type RoomAmenitiesUncheckedUpdateManyWithoutAmenitiesInput = {
+  export type RoomAmenitiesUncheckedUpdateManyWithoutAmenityInput = {
     id?: StringFieldUpdateOperationsInput | string
     roomId?: StringFieldUpdateOperationsInput | string
   }

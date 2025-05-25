@@ -131,7 +131,7 @@ exports.Prisma.RoomScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.AmenitiesScalarFieldEnum = {
+exports.Prisma.AmenityScalarFieldEnum = {
   id: 'id',
   name: 'name',
   createdAt: 'createdAt',
@@ -141,7 +141,7 @@ exports.Prisma.AmenitiesScalarFieldEnum = {
 exports.Prisma.RoomAmenitiesScalarFieldEnum = {
   id: 'id',
   roomId: 'roomId',
-  amenitiesId: 'amenitiesId'
+  amenityId: 'amenityId'
 };
 
 exports.Prisma.ReservationScalarFieldEnum = {
@@ -221,7 +221,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   Room: 'Room',
-  Amenities: 'Amenities',
+  Amenity: 'Amenity',
   RoomAmenities: 'RoomAmenities',
   Reservation: 'Reservation',
   Payment: 'Payment',
