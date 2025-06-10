@@ -23,3 +23,5 @@ export type RoomDetailProps = Prisma.RoomDetailProps<{
     };
   };
 }>;
+
+/* TEST */
