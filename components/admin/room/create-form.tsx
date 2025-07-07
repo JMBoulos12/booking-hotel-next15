@@ -6,7 +6,7 @@ import { type PutBlobResult } from "@vercel/blob";
 import { IoCloudUploadOutline, IoTrashOutline } from "react-icons/io5";
 import Image from "next/image";
 import { BarLoader } from "react-spinners";
-import { Amenity as Amenities } from "@prisma/client";
+import { Amenity } from "@prisma/client";
 import clsx from "clsx";
 
 const createForm = ({ amenities }: { amenities: Amenities[] }) => {
